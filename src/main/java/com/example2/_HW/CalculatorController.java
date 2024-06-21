@@ -23,11 +23,19 @@ public class CalculatorController {
     @GetMapping(path = "/plus")
     public String plus(@RequestParam ("num1") int a,@RequestParam ("num2") int b) {
         if (a != 0 && b != 0) {
-            return + a + " + " + b + " = " + calculatorService.plus(a, b);
+            return  a + " + " + b + " = " + calculatorService.plus(a, b);
         } else {
             return "Ошибка! Введите оба числа";
         }
-
     }
+    @GetMapping (path = "/minus")
+    public String minus (@RequestParam ("num1") int a, @RequestParam("num2")int b) {
+        if (a != 0 && b != 0) {
+            return a + " - " + b + " = " + calculatorService.minus(a, b);
+        } else {
+            return "Ошибка! Введите оба числа";
+        }
+    }
+
 }
 
