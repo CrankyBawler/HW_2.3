@@ -36,6 +36,13 @@ public class CalculatorController {
             return "Ошибка! Введите оба числа";
         }
     }
-
+    @GetMapping(path = "/multiply")
+    public String multiply(@RequestParam ("num1") int a,@RequestParam ("num2") int b) {
+        if (a != 0 && b != 0) {
+            return a + " * " + b + " = " + calculatorService.multiply(a, b);
+        } else {
+            return "Ошибка! Введите оба числа";
+        }
+    }
 }
 
