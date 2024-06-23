@@ -21,28 +21,30 @@ public class CalculatorController {
     }
 
     @GetMapping(path = "/plus")
-    public String plus(@RequestParam ("num1") int a,@RequestParam ("num2") int b) {
-        if (a != 0 && b != 0) {
-            return  a + " + " + b + " = " + calculatorService.plus(a, b);
-        } else {
-            return "Ошибка! Введите оба числа";
-        }
+    public String plus(@RequestParam(value = "num1", required = false) int a, @RequestParam(value = "num2", required =
+            false) int b) {
+
+        return a + " + " + b + " = " + calculatorService.plus(a, b);
     }
-    @GetMapping (path = "/minus")
-    public String minus (@RequestParam ("num1") int a, @RequestParam("num2")int b) {
-        if (a != 0 && b != 0) {
-            return a + " - " + b + " = " + calculatorService.minus(a, b);
-        } else {
-            return "Ошибка! Введите оба числа";
-        }
+
+    @GetMapping(path = "/minus")
+    public String minus(@RequestParam(value = "num1", required = false) int a, @RequestParam(value = "num2", required =
+            false) int b) {
+
+        return a + " - " + b + " = " + calculatorService.minus(a, b);
     }
+
     @GetMapping(path = "/multiply")
-    public String multiply(@RequestParam ("num1") int a,@RequestParam ("num2") int b) {
-        if (a != 0 && b != 0) {
-            return a + " * " + b + " = " + calculatorService.multiply(a, b);
-        } else {
-            return "Ошибка! Введите оба числа";
-        }
+    public String multiply(@RequestParam(value = "num1", required = false) int a, @RequestParam(value = "num2", required =
+            false) int b) {
+
+        return a + " * " + b + " = " + calculatorService.multiply(a, b);
+    }
+
+    @GetMapping(path = "/divide")
+    public String divide(@RequestParam(value = "num1", required = false) int a, @RequestParam(value = "num2", required =
+            false) int b) {
+        return a + " / " + b + " = " + calculatorService.divide(a, b);
     }
 }
 
